@@ -1,0 +1,175 @@
+﻿@model Pragma.Models.Venta
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<div class="navbar">
+    <h2 style="display:inline-block; margin-left:0.5rem;">EDITAR INFORMACION DE VENTAS</h2>
+    <img src="~/img/logo.png" width="50px" height="50px" style="border-radius: 10rem; display: inline-block; float:right; margin-right:0.5rem; margin-top:0.5rem;">
+</div>
+<div id="contenido">
+    @if (@Session["Admin"] == "ok")
+    {
+        using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.HiddenFor(model => model.id_venta)
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.id_loteProducto, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.id_loteProducto, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.id_loteProducto, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.nombre_producto, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.nombre_producto, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.nombre_producto, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.cantidad_producto, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.cantidad_producto, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.cantidad_producto, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.precio, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.precio, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.precio, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.descuento, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.descuento, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.descuento, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.id_usuario, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.id_usuario, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.id_usuario, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <button type="submit" value="Save" style="background-color: #c5e0b4; border: solid #517f31; border-radius: 5px; font-weight: bold;">
+                            <h4 style="font-weight: bold;">Guardar cambios</h4>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        }
+
+        <div>
+            <button style="background-color: #c5e0b4; border: solid #517f31; border-radius: 5px; ">
+                <h4>@Html.ActionLink("Atras", "Index")</h4>
+            </button>
+        </div>
+    }
+    else if (Session["Usuario"] == "ok")
+    {
+        using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.HiddenFor(model => model.id_venta)
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.id_loteProducto, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.id_loteProducto, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.id_loteProducto, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.nombre_producto, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.nombre_producto, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.nombre_producto, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.cantidad_producto, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.cantidad_producto, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.cantidad_producto, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.precio, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.precio, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.precio, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.descuento, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.descuento, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.descuento, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.id_usuario, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.id_usuario, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.id_usuario, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <button type="submit" value="Save" style="background-color: #c5e0b4; border: solid #517f31; border-radius: 5px; font-weight: bold;">
+                            <h4 style="font-weight: bold;">Guardar cambios</h4>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        }
+
+        <div>
+            <button style="background-color: #c5e0b4; border: solid #517f31; border-radius: 5px; ">
+                <h4>@Html.ActionLink("Atras", "Index")</h4>
+            </button>
+        </div>
+    }
+    else
+    {
+        <h1 style="text-align:center;">Usted no puede acceder a esta opción</h1>
+        <h1 style="text-align:center;">Para tener acceso debe iniciar sesión</h1>
+        <button style="background-color: #c5e0b4; border: solid #517f31; border-radius: 5px; ">
+            <h4>@Html.ActionLink("Atras", "Index", "Home")</h4>
+        </button>
+    }
+
+</div>
+<nav class="navbarF">
+    <div class="foot">
+        &nbsp;&nbsp;<h3 style="padding-left:1rem">&copy; @DateTime.Now.Year - Gestion de inventarios y ventas Pragma</h3>
+    </div>
+</nav>

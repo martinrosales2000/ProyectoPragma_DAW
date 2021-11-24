@@ -1,0 +1,128 @@
+﻿@model IEnumerable<Pragma.Models.Venta>
+
+@{
+    ViewBag.Title = "INGRESAR VENTAS";
+}
+
+<div class="navbar">
+    <h2 style="display:inline-block; margin-left:0.5rem;">INGRESAR VENTAS</h2>
+    <img src="~/img/logo.png" width="50px" height="50px" style="border-radius: 10rem; display: inline-block; float:right; margin-right:0.5rem; margin-top:0.5rem;">
+</div>
+<div id="contenido">
+
+    @if (Session["login"] == "ok")
+    {
+        <button style="background-color: #c5e0b4; border: solid #517f31; border-radius: 5px; ">
+            <h4>
+                @Html.ActionLink("Ingresar nuevo registro", "Create")
+            </h4>
+        </button>
+        <hr />
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.id_venta)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.id_loteProducto)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.nombre_producto)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.cantidad_producto)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.precio)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.descuento) "$"
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.id_usuario)
+                </th>
+                <th>
+                    Sub total
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.id_venta)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.id_loteProducto)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.nombre_producto)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.cantidad_producto)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.precio)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.descuento)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.id_usuario)
+                    </td>
+
+                    @{var subTotal = (item.precio * Convert.ToDecimal(item.cantidad_producto)) - item.descuento;
+                        <td>
+                            @subTotal
+                        </td>
+                    }
+                    <td>
+                        @if (@Session["Admin"] == "ok")
+                        {
+                            <button style="background-color: #c5e0b4; border: solid #517f31; border-radius: 5px; ">
+                                @Html.ActionLink("Editar", "Edit", new { id = item.id_venta })
+                            </button>
+
+                            <button style="background-color: #c5e0b4; border: solid #517f31; border-radius: 5px; ">
+                                @Html.ActionLink("Detalles", "Details", new { id = item.id_venta })
+                            </button>
+
+                            <button style="background-color: #c5e0b4; border: solid #517f31; border-radius: 5px; ">
+                                @Html.ActionLink("Eliminar", "Delete", new { id = item.id_venta })
+                            </button>
+                        }
+                        else
+                        {
+                            <button style="background-color: #c5e0b4; border: solid #517f31; border-radius: 5px; ">
+                                @Html.ActionLink("Editar", "Edit", new { id = item.id_venta })
+                            </button>
+
+                            <button style="background-color: #c5e0b4; border: solid #517f31; border-radius: 5px; ">
+                                @Html.ActionLink("Detalles", "Details", new { id = item.id_venta })
+                            </button>
+
+                        }
+
+                    </td>
+                </tr>
+            }
+
+        </table>
+    }
+    else
+    {
+        <h1 style="text-align:center;">Usted no puede acceder a esta opción</h1>
+        <h1 style="text-align:center;">Para tener acceso debe iniciar sesión</h1>
+        <button style="background-color: #c5e0b4; border: solid #517f31; border-radius: 5px; ">
+            <h4>@Html.ActionLink("Atras", "Index", "Home")</h4>
+        </button>
+    }
+
+</div>
+
+<nav class="navbarF">
+    <div class="foot">
+        &nbsp;&nbsp;<h3 style="padding-left:1rem">&copy; @DateTime.Now.Year - Gestion de inventarios y ventas Pragma</h3>
+    </div>
+</nav>

@@ -1,0 +1,251 @@
+﻿@import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
+@import url(https://fonts.googleapis.com/css?family=Titillium+Web:300);
+
+.fa-2x {
+    font-size: 2em;
+}
+
+.reg_login {
+    background-image: url("../img/fondo_verde.png");
+}
+
+body {
+    background-color: #e2f0d9;
+    width: 100%;
+}
+
+.registro {
+    width: 45%;
+    background: #c5e0b4;
+    border: solid #a9d18e;
+    margin-top: 4%;
+    position: absolute;
+    margin-left: 26%;
+}
+
+.regist {
+    width: 90%;
+    margin-left: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.log {
+    width: 90%;
+    margin-left: 2rem;
+    margin-bottom: 1.5rem;
+    margin-top: 2rem;
+}
+
+.mb-3 {
+    margin-left: 3rem;
+}
+
+.login {
+    width: 45%;
+    margin-left: 25rem;
+    background: #c5e0b4;
+    border: solid #a9d18e;
+    margin-top: 8%;
+    position: absolute;
+    display: inline-block;
+}
+
+.fa {
+    position: relative;
+    display: table-cell;
+    width: 60px;
+    height: 36px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 20px;
+}
+
+.navbar {
+    margin-top: 0.6rem;
+    background: #a9d18e;
+    margin-left: 20.5rem;
+    border: solid #517f31;
+    color: black;
+    font-weight: bold;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    width: 84.5%;
+}
+
+.navbarF {
+    width: 84.5%;
+    background: #c5e0b4;
+    margin-left: 20.5rem;
+    border: solid #517f31;
+    color: black;
+    font-weight: bold;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    margin-top: 32.6%;
+    margin-right: 0.2rem;
+    height: 10rem;
+}
+
+#botones {
+    margin-left: 1rem;
+    margin-top: 1rem;
+}
+
+#botones2 {
+    margin-left: 1rem;
+    margin-top: 1rem;
+    position: relative;
+    left: 59rem;
+}
+
+#botones3 {
+    margin-left: 1rem;
+    margin-top: 1rem;
+    position: relative;
+    left: 69.5rem;
+}
+
+#botones4 {
+    margin-left: 3rem;
+    margin-top: 1rem;
+}
+
+#b {
+    text-decoration: none;
+}
+
+.main-menu:hover,
+nav.main-menu {
+    width: 200px;
+    overflow: visible;
+}
+
+.main-menu {
+    background: #a9d18e;
+    border-radius: 1rem;
+    margin-top: 0.25rem;
+    margin-left: 0.2rem;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 99%;
+    left: 0;
+    width: 15%;
+    overflow: visible;
+    -webkit-transition: width .05s linear;
+    transition: width .05s linear;
+    -webkit-transform: translateZ(0) scale(1, 1);
+    z-index: 1000;
+    border: solid #517f31;
+}
+
+    .main-menu > ul {
+        margin: 7px 0;
+    }
+
+    .main-menu li {
+        position: relative;
+        display: block;
+        width: 196px;
+    }
+
+        .main-menu li > a {
+            position: relative;
+            display: table;
+            border-collapse: collapse;
+            border-spacing: 0;
+            color: black;
+            font-family: arial;
+            text-decoration: none;
+            -webkit-transform: translateZ(0) scale(1, 1);
+            -webkit-transition: all .1s linear;
+            transition: all .1s linear;
+        }
+
+    .main-menu .nav-icon {
+        position: relative;
+        display: table-cell;
+        width: 60px;
+        height: 36px;
+        text-align: center;
+        vertical-align: middle;
+        font-size: 18px;
+    }
+
+    .main-menu .nav-text {
+        position: relative;
+        display: table-cell;
+        vertical-align: middle;
+        width: 190px;
+        font-family: 'Titillium Web', sans-serif;
+        font-weight: bold;
+    }
+
+    .main-menu > ul.logout {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+    }
+
+.no-touch .scrollable.hover {
+    overflow-y: hidden;
+}
+
+    .no-touch .scrollable.hover:hover {
+        overflow-y: auto;
+        overflow: visible;
+    }
+
+a:hover,
+a:focus {
+    text-decoration: none;
+}
+
+nav {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+    nav ul,
+    nav li {
+        outline: 0;
+        margin: 0;
+        padding: 0;
+    }
+
+    .main-menu li:hover > a,
+    nav.main-menu li.active > a,
+    .dropdown-menu > li > a:hover,
+    .dropdown-menu > li > a:focus,
+    .dropdown-menu > .active > a,
+    .dropdown-menu > .active > a:hover,
+    .dropdown-menu > .active > a:focus,
+    .no-touch .dashboard-page nav.dashboard-menu ul li:hover a,
+    .dashboard-page nav.dashboard-menu ul li.active a {
+        color: #fff;
+        background-color: #528034;
+    }
+
+.User {
+    color: black;
+    font-weight: bold;
+    padding-left: 3rem;
+}
+
+.area {
+    float: left;
+    background: #e2e2e2;
+    width: 100%;
+    height: 100%;
+}
+
+@font-face {
+    font-family: 'Titillium Web';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Titillium WebLight'), local('TitilliumWeb-Light'), url(http://themes.googleusercontent.com/static/fonts/titilliumweb/v2/anMUvcNT0H1YN4FII8wpr24bNCNEoFTpS2BTjF6FB5E.woff) format('woff');
+}
+

@@ -1,0 +1,149 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <script src="https://kit.fontawesome.com/422c276ca1.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <nav class="main-menu">
+        <ul class="User" style="margin-bottom:5rem">
+            <a>
+                <h3>User: @Session["User"] </h3>
+            </a>
+        </ul>
+        <ul>
+            @if (@Session["Admin"] == "ok")
+            {
+                <li class="p">
+                    <i class="fa fa-book fa-2x"></i>
+                    <span id="espacio">
+                        @Html.ActionLink("Inventario", "Index", "Inventarios")
+                    </span>
+                </li>
+            }
+            else if (@Session["Usuario"] == "ok")
+            {
+                <li class="p">
+                    <i class="fa fa-book fa-2x"></i>
+                    <span id="espacio">
+                        @Html.ActionLink("Inventario", "Index", "Inventarios")
+                    </span>
+                </li>
+            }
+            else
+            {
+                <li class="p">
+                    <i class="fa fa-book fa-2x"></i>
+                    <span id="espacio">
+                        @Html.ActionLink("Inventario", "MantInventario", "PragmaViews")
+                    </span>
+                </li>
+            }
+
+            @if (@Session["Admin"] == "ok")
+            {
+                <li class="p">
+                    <i class="fa fa-shopping-bag fa-2x"> </i>
+                    <span id="espacio">
+                        @Html.ActionLink("Ingresar venta", "Index", "Ventas")
+                    </span>
+                </li>
+            }
+            else if (@Session["Usuario"] == "ok")
+            {
+                <li class="p">
+                    <i class="fa fa-shopping-bag fa-2x"> </i>
+                    <span id="espacio">
+                        @Html.ActionLink("Ingresar venta", "Index", "Ventas")
+                    </span>
+                </li>
+            }
+            else
+            {
+                <li class="p">
+                    <i class="fa fa-shopping-bag fa-2x"> </i>
+                    <span id="espacio">
+                        @Html.ActionLink("Ingresar venta", "MantInventario", "PragmaViews")
+                    </span>
+                </li>
+            }
+
+            @if (@Session["Admin"] == "ok")
+            {
+                <li class="p">
+                    <i class="fa fa-box fa-2x"></i>
+                    <span id="espacio">
+                        @Html.ActionLink("Lote", "Index", "loteProductoModels")
+                    </span>
+                </li>
+            }
+            else if (@Session["Usuario"] == "ok")
+            {
+                <li class="p">
+                    <i class="fa fa-box fa-2x"></i>
+                    <span id="espacio">
+                        @Html.ActionLink("Lote", "Index", "loteProductoModels")
+                    </span>
+                </li>
+            }
+            else
+            {
+                <li class="p">
+                    <i class="fa fa-box fa-2x"></i>
+                    <span id="espacio">
+                        @Html.ActionLink("Lote", "MantInventario", "PragmaViews")
+                    </span>
+                </li>
+            }
+
+
+            @if (@Session["Admin"] != "ok")
+            {
+                <li class="p">
+                    <i class="fa fa-user fa-2x"></i>
+                    <span id="espacio">
+                        @Html.ActionLink("Usuario", "MantInventario", "PragmaViews")
+                    </span>
+                </li>
+            }
+            else
+            {
+                <li class="p">
+                    <i class="fa fa-user fa-2x"></i>
+                    <span id="espacio">
+                        @Html.ActionLink("Usuario", "Index", "Usuarios")
+                    </span>
+                </li>
+            }
+
+        </ul>
+        <ul class="logout" style="width:100%">
+            <li class="p">
+                <i class="fa fa-power-off fa-2x"></i>
+                <span id="espacio">
+                    @Html.ActionLink("Cerrar sesión", "LogOut", "Home")
+                </span>
+            </li>
+        </ul>
+    </nav>
+
+
+    <div class="container body-content">
+
+        @RenderBody()
+
+
+    </div>
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
